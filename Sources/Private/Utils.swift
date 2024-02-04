@@ -13,7 +13,7 @@ internal enum Utils {
 			throw Err.sysctlFailed(errno: errno)
 		}
 		
-		var buffer = malloc(MemoryLayout<CChar>.size * (bufferSize + 1))
+		let buffer = malloc(MemoryLayout<CChar>.size * (bufferSize + 1))
 		guard buffer != nil else {throw Err.cannotAllocateMemory}
 		defer {free(buffer)}
 		
