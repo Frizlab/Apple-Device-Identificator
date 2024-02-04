@@ -5,7 +5,7 @@ import Foundation
 internal extension AppleDevice {
 	
 	/* Source: <https://www.everymac.com>. */
-	static let deviceIDToFamily: [String: DeviceFamily] = [
+	static let firmwareIDToDeviceFamily: [String: DeviceFamily] = [
 		/* iPhones */
 		"iPhone1,1":  .iPhone,
 		"iPhone1,2":  .iPhone3G,     /* Also, iPhone 3G,  China only (no Wi-Fi) */
