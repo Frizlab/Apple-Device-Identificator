@@ -84,8 +84,9 @@ struct HardwareModel : Sendable {
 		case simulatorIntelI386   = "Simulator (Intel i386)"
 		case simulatorIntelX86_64 = "Simulator (Intel x86_64)"
 		
-		/* Unknown or newer than implementation time... */
-		case unknown = "Unknown"
+		/* Unknown or newer than implementation time… */
+		case unknown = "Something Recent, Probably"
+		case fetchError = "Unknown"
 	}
 	
 	/* Source: <https://www.everymac.com>. */
@@ -184,7 +185,7 @@ struct HardwareModel : Sendable {
 	init(platformCode pc: String?) {
 		platformCode = pc
 		if let pc = pc {platform = HardwareModel.mapping[pc] ?? .unknown}
-		else           {platform = .unknown}
+		else           {platform = .fetchError}
 	}
 	
 	/* lazy */
